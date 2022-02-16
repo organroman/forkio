@@ -1,0 +1,117 @@
+.pricing{
+    background-image: url(../images/pricing-bg.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    //padding-bottom: 150px;
+    padding-bottom: 97px;
+
+    &__title{
+        font-size: rem(48);
+        line-height: rem(50);
+        font-weight: bold;
+        padding: 83px 0 61px 0;
+        //padding-top: 108px;
+        color: $hover-color;
+        text-align: center;
+        //margin-bottom: 110px;
+    }
+
+    &__content{
+        @include flex;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    &__item{
+        @include pricing-item;
+        
+        &__title{
+            @include pricing-title;
+        }
+        
+        &__price{
+            @include pricing-price;
+        }
+
+        &__subtitle{
+            @include pricing-subtitle;
+        }
+
+        &__subtitle::after{
+            @include pricing-after;
+        }
+
+        &__text{
+            @include pricing-text;
+        }
+
+        &__link{
+            @include pricing-link;
+        }
+    }
+
+    &__big-item{
+        @include pricing-item;
+        background: rgba(70, 48, 72, 1);
+        min-width: 290px;
+        
+        
+        &__title{
+            @include pricing-title;
+            background: rgba(0, 0, 0, 0.1);
+            padding: 43px 96px;
+        }
+        
+        &__price{
+            @include pricing-price;
+        }
+
+        &__subtitle{
+            @include pricing-subtitle;
+            margin-bottom: 95px;
+        }
+
+        &__subtitle::after{
+            @include pricing-after;
+            left: 115px;
+        }
+
+        &__text{
+            @include pricing-text;
+            margin-bottom: 80px;
+        }
+
+        &__link{
+            @include pricing-link;
+            padding: 18px 40px;
+        }
+    }
+}
+
+@media (min-width: 481px) and (max-width: 992px) {
+    .pricing{
+        &__title {
+            font-size: rem(48);
+            line-height: rem(50);
+            font-weight: bold;
+            padding: 83px 0 39px 0;
+        }
+
+        &__content{
+            display: grid;
+            grid-template-columns: repeat(2, auto);
+            grid-template-rows: repeat(2, auto);
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    .pricing {
+        &__title {
+            font-size: rem(28);
+            line-height: rem(42);
+            padding: 14px 0 32px 0;
+        }
+    }
+}
