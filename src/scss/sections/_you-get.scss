@@ -1,0 +1,124 @@
+.you-get{
+    background: #F4F4F4;
+    padding-bottom: 2em;
+    padding-top: 5em;   
+    &__wrapper{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, auto);
+
+    }    
+    &__title{
+        font-size: rem(48);
+        line-height: rem(50);
+        color: #8D81AC;
+        font-weight: bold;
+        text-align: center;
+        padding-bottom: 18px;
+    }
+
+    &__stuff{
+        grid-row-start: span 2;
+    }
+
+    &__img{
+        max-width: 600px;
+        margin-right: -10px;
+    }
+
+    &__item{
+        @include flex;
+        &__content{
+            margin-left: 1.25em;
+            margin-right: 3.1em;
+            margin-bottom: 2.1em;
+        }
+        &__title{
+            font-size: rem(16);
+            line-height: rem(21);
+            color: #323232;
+            margin-bottom: 15px;
+        }
+        &__text{
+            color: #848E97;
+            font-size: rem(14);
+            line-height: rem(21);
+            width: 100%;
+            max-width: 400px;
+        }
+        &__picture{
+            flex-basis: 110px;
+            flex-shrink: 0;
+            text-align: center;
+        }
+    }
+}
+@media (min-width: 481px) and (max-width: 992px){
+    .you-get{
+        background: rgba(0, 0, 0, 0.0001);
+        padding-top: 0;
+
+        &__wrapper{
+            @include flex;
+            flex-direction: column-reverse;   
+        }
+        &__title{
+            font-size: rem(42);
+            line-height: rem(44);
+            padding: 61px 0 50px 0;
+        }
+        &__picture{
+            order: -1;
+            align-self: flex-end;
+        }
+        &__img{
+            max-width: 700px;
+            margin-right: -15px;
+        }
+
+        &__item{
+            margin-bottom: 60px;
+            &__content {
+                margin: 0 0 0 1.25em;
+
+            }
+            &__text{
+                max-width: 580px;
+                width: 100%;
+            }
+        }
+    }
+}
+@media (max-width: 480px) {
+    .you-get{
+        background: rgba(0, 0, 0, 0.0001);
+        &__wrapper{
+            @include flex;
+            flex-direction: column-reverse;
+        }
+        
+        &__title{
+            font-size: rem(32);
+            line-height: rem(38);
+            grid-row-start: 1;
+            grid-row-end: 1;
+            margin-bottom: 36px;
+            max-width: 230px
+        }
+        
+        &__picture{
+            max-width:315px; 
+            order: -3;
+            align-self: flex-end;
+        }
+        &__item{
+            @include flex;
+            flex-direction: column;
+            text-align: center;
+
+            &__content {
+                margin: 0 0 38px 0;
+            }
+        }
+    }
+}

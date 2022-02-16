@@ -1,0 +1,117 @@
+.feedback {
+  background-image: url(../images/feedback-bg.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  //position:relative;
+}
+
+.section-title {
+  font-weight: bold;
+  font-size: rem(48);
+  line-height: rem(50);
+  text-align: center;
+  padding-top: 108px;
+  color: $hover-color;
+}
+
+.feedback__content {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-row-gap: 111px;
+  grid-column-gap: 90px;
+  align-items: end;
+  padding: 82px 0 118px 0;
+
+  &-item {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    text-align: center;
+    gap: 30px;
+
+    &-text {
+      font-style: italic;
+      font-weight: bold;
+      font-size: rem(16);
+      line-height: rem(24);
+      font-family: $secondary-fonts;
+      color: $hover-color;
+    }
+  }
+}
+
+.feedback__bottom {
+  padding-bottom: 50px;
+ text-align: center;
+
+  &-text {
+    font-size: rem(14);
+    line-height: rem(21);
+    color: #A291A5;
+    width: 74%;
+    padding-bottom: 19px;
+    margin: 0 auto;
+  }
+
+  &-line {
+      height: 2px;
+      width: 65%;
+      background: #645766;
+      margin: 0 auto;
+  }
+}
+
+@media (max-width: 992px) {
+  .section-title {
+    font-size: rem(42);
+    line-height: rem(44);
+    padding-top: 86px;
+  }
+
+  .feedback__content {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-row-gap: 63px;
+    padding: 88px 0 68px 0;
+    grid-column-gap: 70px;
+    align-items: end;
+  }
+
+  .feedback__bottom {
+
+    &-text {
+      max-width: 704px;
+    }
+
+    &-line {
+      max-width: 555px;
+    }
+  }
+
+}
+
+@media (max-width: 480px) {
+  .feedback__bottom {
+    padding-bottom: 14px;
+  }
+  .section-title {
+    font-weight: bold;
+    font-size: rem(36);
+    line-height: rem(48);
+    padding-top: 57px;
+  }
+
+  .feedback__content {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 45px;
+    align-items: end;
+    padding: 53px 0 37px 0;
+  }
+}
+
+
+
